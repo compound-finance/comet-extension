@@ -1,0 +1,13 @@
+{
+  "name": "@compound-finance/comet-extension",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "dependencies": {
+    "@ethersproject/providers": "^5.7.1"
+  },
+  "devDependencies": {
+    "typescript": "^4.8.3"
+  }
+}
