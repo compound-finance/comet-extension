@@ -1,5 +1,19 @@
 import { TransactionResponse } from '@ethersproject/providers';
 
+/**
+ * Extensions - Messages
+ *
+ * Here we define the types of messages that we can receive
+ * from an extension, and the corresponding response types
+ * that the extension should expect to receive. For every
+ * `InMessage` sent to this app, the extension should receive
+ * either the corresponding `OutMessage[InMessage]` or an
+ * error tuple.
+ *
+ * Note: it would benefit extensions to copy-paste in this file,
+ *       and is one of the few places we would consider factoring
+ *       out into a shared lib to make that easy.
+ */
 export type InMessage =
   | { type: 'read'; to: string; data: string }
   | { type: 'write'; to: string; data: string }
