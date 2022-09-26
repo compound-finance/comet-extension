@@ -1,6 +1,6 @@
 {
   "name": "@compound-finance/comet-extension",
-  "version": "0.0.1-alpha1",
+  "version": "0.0.1-alpha2",
   "type": "module",
   "main": "dist/src/index.js",
   "types": "dist/src/index.d.ts",
