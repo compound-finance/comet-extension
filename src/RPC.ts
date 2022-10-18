@@ -34,10 +34,14 @@ export function buildRPC(): RPC {
   let extBacklog: ExtMessage[] = [];
 
   function handleExtMessage(extMsg: ExtMessage) {
-    let type = extMsg.type;
+    console.log("zz" + extMsg.type);
     for (let handler of extHandlers) {
-      if (type in handler) {
-        handler[type]!(extMsg);
+      if (extMsg.type in handler) {
+        if (extMsg.type === 'setTheme') {
+          handler[extMsg.type]!(extMsg);
+        } else if (extMsg.type === 'setCometState') {
+          handler[extMsg.type]!(extMsg);
+        }
       }
     }
   }

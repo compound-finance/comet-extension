@@ -10,3 +10,5 @@ export { extensions } from './Extension';
 
 export type { Permissions } from './Permissions';
 export { checkPermission } from './Permissions';
+
+export type { CometState } from './CometState';
