@@ -1,4 +1,5 @@
 import { TransactionResponse } from '@ethersproject/providers';
+import type { CometState } from './CometState';
 
 /**
  * Extensions - Messages
@@ -18,7 +19,8 @@ export type InMessage =
   | { type: 'read'; to: string; data: string }
   | { type: 'write'; to: string; data: string }
   | { type: 'sendWeb3'; method: string; params: string[] }
-  | { type: 'getTheme'; };
+  | { type: 'getTheme'; }
+  | { type: 'getCometState'; };
 
 export type OutMessage<InMessage> = InMessage extends { type: 'read' }
   ? { type: 'read'; data: string }
@@ -28,10 +30,13 @@ export type OutMessage<InMessage> = InMessage extends { type: 'read' }
   ? { type: 'sendWeb3'; data: any }
   : InMessage extends { type: 'getTheme' }
   ? { type: 'setTheme'; theme: 'Dark' | 'Light' }
+  : InMessage extends { type: 'getCometState' }
+  ? { type: 'setCometState'; cometState: CometState }
   : null;
 
 export type ExtMessage =
-  { type: 'setTheme', theme: 'Dark' | 'Light' };
+  | { type: 'setTheme', theme: 'Dark' | 'Light' }
+  | { type: 'setCometState', cometState: CometState };
 
 type ExtMessageConfig<ExtMessage extends { type: string }> = {
     [E in ExtMessage as E["type"]]?: (msg: E) => void;
