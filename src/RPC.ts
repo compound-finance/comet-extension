@@ -34,7 +34,6 @@ export function buildRPC(): RPC {
   let extBacklog: ExtMessage[] = [];
 
   function handleExtMessage(extMsg: ExtMessage) {
-    console.log("zz" + extMsg.type);
     for (let handler of extHandlers) {
       if (extMsg.type in handler) {
         if (extMsg.type === 'setTheme') {
