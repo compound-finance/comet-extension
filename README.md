@@ -53,7 +53,7 @@ Once you've created an extension, you may create a pull request to this repo to 
 
 :warning: This repo contains a list of Extensions curated by Compound. See [Curation and Safety](#) below for more information. Extensions may also be used in stand-alone mode (see the [Creating an Extension](#Creating-an-Extension)) or may be integrated into a public fork of the Compound III interface.
 
-To add an extension, create a pull request to this repo, adding the configuration for your extension to `extensions.js`. For example:
+To add an extension, create a pull request to this repo, adding the configuration for your extension to `src/extensions.json`. For example:
 
 ```diff
  [
