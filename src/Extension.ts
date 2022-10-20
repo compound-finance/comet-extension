@@ -1,4 +1,4 @@
-import extensionsJson from '../extensions.json';
+import extensionsJson from './extensions.json';
 import { Permissions } from './Permissions';
 
 /**
