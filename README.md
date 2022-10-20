@@ -41,11 +41,11 @@ provider.sendTransaction(...);
 
 ### Operators
 
-Operators are smart contracts that have access to act on behalf of a user's Compound III position. For instance, the [Compound III Bulker](#) is a smart contract which bulks actions such as supplying to Compound III and borrowing in order to save gas and complete the transaction atomically. Extensions will often be one-to-one with an operator (defined by a chain and network address), and the Web Extension may just be the user interface to the operator. Read more about Compound III operators in the [Compound III documentation](#).
+Operators are smart contracts that have access to act on behalf of a user's Compound III position. For instance, the [Comet Migrator](https://github.com/compound-finance/comet-migrator) is a smart contract which moves a position from Compound II or other DeFi platforms, using a flash loan to move the position atomically. Extensions may often be one-to-one with an operator (defined by a chain and network address), and the Web Extension may just be the user interface to the operator. Read more about Compound III operators in the [Compound III documentation](https://github.com/compound-finance/comet).
 
 ## Creating an Extension
 
-The easiest way to create an extension is to fork the [comet-extension-skeleton](#) project. The skeleton has a full set-up to build a Compound III Operator via forge and a web experience via React on Vite. The web app can be run as a standalone application or as an embedded Web Extension. Additionally, there's tools to deploy the Web Extension to IPFS, which is the recommended way to host a Compound III Web Extension. Please see [comet-extension-skeleton](#) for more details on forking the skeleton and deploying an Extension. Note: once you have an extension deployed, you will create a pull request against _this repo_ to add it to the curated list of extensions (see below).
+The easiest way to create an extension is to fork the [comet-extension-template](https://github.com/compound-finance/comet-extension-template) project. The template has a full set-up to build a Compound III Operator via forge and a web experience via React on Vite. The web app can be run as a standalone application or as an embedded Web Extension. Additionally, there's tools to deploy the Web Extension to IPFS, which is the recommended way to host a Compound III Web Extension. Please see [comet-extension-template](https://github.com/compound-finance/comet-extension-template) for more details on forking the template and deploying an Extension. Note: once you have an extension deployed, you will create a pull request against _this repo_ to add it to the curated list of extensions (see below).
 
 ## Adding an Extension
 
@@ -91,9 +91,21 @@ The bar for inclusion is thus very high, and it may be worth garnering feedback 
 
 Again, inclusion in the main branch of this repo is just to be available Compound's own [Compound III Interface](https://v3-app.compound.finance). You should be able to deploy your Extension as a standalone experience or deploy a fork of the Compound III interface including your Extension.
 
+## Building & Publishing
+
+To build locally, simply run:
+
+```
+tsc
+```
+
+The output will be in the `dist` folder.
+
+To deploy a new version, bump the version in `package.json` and create a pull request merged into main branch. The next version will be automatically deployed.
+
 ## Contributing
 
-Feel free to create pull requests to expand the scope of the Compound Extension ecosystem. We're interested in expanding what extensions can do while maintaining user safety and privacy. You can also create issues here to discuss or chat in the [forums](https://comp.xyz) or [discord](https://compound.finance/discord).
+Feel free to create pull requests to expand the scope of the Compound Extension ecosystem. We're interested in expanding what extensions can do while maintaining user safety and privacy. You can also create issues here to discuss or chat in the [forums](https://comp.xyz) or [discord](https://compound.finance/discord). All contributors agree that any contributions are hereby licensed as below.
 
 ## License
 
