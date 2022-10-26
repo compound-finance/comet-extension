@@ -10,13 +10,22 @@ import { Permissions } from './Permissions.js';
  * ordering for enumeration.
  */
 
-export type ExtensionSource =
- { url: string } |
- { ipfs: string, domain?: string, path?: string }
+export type ExtensionSource = { url: string } | { ipfs: string; domain?: string; path?: string };
+
+export type Links = {
+  github: string;
+  website: string;
+};
+
+export type SupportedMarkets = Record<string, string>;
 
 export interface Extension {
   id: string;
   name: string;
+  description: string;
+  developer: string;
+  links: Links;
   permissions: Permissions;
   source: ExtensionSource;
+  supportedMarkets: SupportedMarkets;
 }
