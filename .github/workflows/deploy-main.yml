@@ -18,8 +18,8 @@ jobs:
       - name: Install packages
         run: yarn install
 
-      - name: Check types
-        run: tsc
+      - name: Build tsc
+        run: tsc -p tsconfig.build.json
 
       - uses: JS-DevTools/npm-publish@v1
         with:

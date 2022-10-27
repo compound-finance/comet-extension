@@ -16,16 +16,16 @@ import type { CometState } from './CometState';
  *       out into a shared lib to make that easy.
  */
 export type InMessage =
-  | { type: 'read'; to: string; data: string }
-  | { type: 'write'; to: string; data: string }
-  | { type: 'sendWeb3'; method: string; params: string[] }
+  | { type: 'storage:read'; key: string; }
+  | { type: 'storage:write'; key: string;  value: string }
+  | { type: 'sendWeb3'; method: string; params: any[] }
   | { type: 'getTheme'; }
   | { type: 'getCometState'; };
 
-export type OutMessage<InMessage> = InMessage extends { type: 'read' }
-  ? { type: 'read'; data: string }
-  : InMessage extends { type: 'write' }
-  ? { type: 'write'; data: TransactionResponse }
+export type OutMessage<InMessage> = InMessage extends { type: 'storage:read' }
+  ? { type: 'storage:read'; data: string }
+  : InMessage extends { type: 'storage:write' }
+  ? { type: 'storage:write'; data: null }
   : InMessage extends { type: 'sendWeb3' }
   ? { type: 'sendWeb3'; data: any }
   : InMessage extends { type: 'getTheme' }
