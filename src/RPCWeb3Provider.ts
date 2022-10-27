@@ -15,7 +15,6 @@ export class RPCWeb3Provider extends JsonRpcProvider  {
       return this._cache[method];
     }
     let res = sendWeb3(this.sendRPC, method, params);
-    res.then((r) => console.log(method, r));
     if (cache) {
       this._cache[method] = res;
       setTimeout(() => {

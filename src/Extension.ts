@@ -1,4 +1,3 @@
-import extensionsJson from './extensions.json';
 import { Permissions } from './Permissions';
 
 /**
@@ -22,4 +21,3 @@ export interface Extension {
   source: ExtensionSource;
 }
 
-export const extensions: Extension[] = extensionsJson;
