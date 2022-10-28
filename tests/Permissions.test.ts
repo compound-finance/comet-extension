@@ -102,6 +102,13 @@ const typedDataV4 = {
 const typedParams = [FROM, typedDataV4];
 
 let tests: Test[] = [
+  /** SUDO **/
+  {
+    name: 'sudo',
+    permissions: { sudo: true },
+    message: { type: 'storage:read', key: 'dog' },
+    exp: null
+  },
   /** STORAGE **/
   {
     name: 'storage:read - empty',

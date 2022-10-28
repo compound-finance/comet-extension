@@ -35,9 +35,12 @@ export type SignPermission =
   };
 
 export type Permissions = {
+  sudo?: boolean, // Allows everything
   storage?: '*'; // Ext. is allowed to read and write from local storage
   trx?: '*' | TrxPermission[] // Ext. is allowed to call these functions
   sign?: '*' | SignPermission[] // Ext. is allowed to sign these messages
+  popups?: boolean // Ext. is allowed to open pop-ups
+  modals?: boolean // Ext. is allowed to use alert modals
 };
 
 function strEq(a: string, b: string): boolean {
@@ -220,6 +223,10 @@ function checkSignTypedData(params: any[], { sign }: Permissions, operator: stri
 }
 
 export function checkPermission(message: InMessage, permissions: Permissions, operator: string | null): null | string {
+  if (permissions.sudo === true) {
+    return null;
+  }
+
   switch (message.type) {
     case 'storage:read':
       if (permissions.storage && permissions.storage) {

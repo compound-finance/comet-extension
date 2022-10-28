@@ -20,4 +20,3 @@ export interface Extension {
   permissions: Permissions;
   source: ExtensionSource;
 }
-
