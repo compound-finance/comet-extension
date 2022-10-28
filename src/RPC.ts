@@ -53,7 +53,9 @@ export function buildRPC(): RPC {
       reject = reject_;
     });
     handlers[msgId] = { resolve: resolve!, reject: reject! };
-    window.top?.postMessage( { msgId: msgId, message: inMsg }, "*");
+    if (window.top && window.self !== window.top) {
+      window.top.postMessage( { msgId: msgId, message: inMsg }, "*");
+    }
     return p as unknown as any;
   }
 
