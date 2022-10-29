@@ -45,7 +45,9 @@ export const extensions: Extension[] = [
       website: 'https://comp.vote/'
     },
     permissions: {
-      sign: '*'
+      sign: '*',
+      popups: true,
+      modals: true
     },
     source: {
       url: "https://comp-vote-xi.vercel.app/"
