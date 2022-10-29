@@ -1,5 +1,5 @@
-import { sendWeb3, SendRPC } from './RPC';
 import { JsonRpcProvider } from '@ethersproject/providers';
+import { sendWeb3, SendRPC } from './RPC.js';
 
 interface JsonRpcRequest {
   id: string | undefined;

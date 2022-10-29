@@ -1,4 +1,4 @@
-import { storageRead, storageWrite, SendRPC } from './RPC';
+import { storageRead, storageWrite, SendRPC } from './RPC.js';
 
 export class LocalStorage {
   sendRPC?: SendRPC;

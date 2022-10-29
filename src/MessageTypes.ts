@@ -1,5 +1,5 @@
 import { TransactionResponse } from '@ethersproject/providers';
-import type { CometState } from './CometState';
+import type { CometState } from './CometState.js';
 
 /**
  * Extensions - Messages

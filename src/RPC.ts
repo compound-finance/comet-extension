@@ -1,5 +1,5 @@
-import { ExtMessage, ExtMessageHandler, InMessage, OutMessage } from './MessageTypes';
 import { TransactionResponse } from '@ethersproject/providers';
+import { ExtMessage, ExtMessageHandler, InMessage, OutMessage } from './MessageTypes.js';
 
 export interface RPC {
   on: (handler: ExtMessageHandler) => void;
