@@ -1,5 +1,5 @@
-import { InMessage } from './MessageTypes';
 import { Interface } from '@ethersproject/abi';
+import { InMessage } from './MessageTypes.js';
 
 /**
  * Extensions - Permissions

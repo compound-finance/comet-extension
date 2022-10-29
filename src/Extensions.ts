@@ -1,4 +1,4 @@
-import { Extension } from './Extension';
+import { Extension } from './Extension.js';
 
 export const extensions: Extension[] = [
   {
