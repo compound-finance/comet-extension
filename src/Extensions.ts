@@ -50,7 +50,7 @@ export const extensions: Extension[] = [
       modals: true
     },
     source: {
-      url: "https://comp-vote-xi.vercel.app/"
+      url: "https://comp-vote-xi.vercel.app/?embedded"
     },
     supportedMarkets: {
       '1_USDC_0xc3d688B66703497DAA19211EEdff47f25384cdc3': null
