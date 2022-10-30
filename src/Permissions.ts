@@ -100,7 +100,7 @@ function checkSendTransaction(params: any[], { trx }: Permissions, operator: str
       return 'Invalid send transaction params';
     }
     let [ callParams ] = params;
-    let allowed = (trx ?? []).some((trxPerm) => {
+    let allowed = (trx || []).some((trxPerm) => {
       if (trxPerm.contract !== '*') {
         let contract = trxPerm.contract;
         if (contract === '$operator') {
