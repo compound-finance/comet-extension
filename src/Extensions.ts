@@ -34,5 +34,26 @@ export const extensions: Extension[] = [
       '1_USDC_0xc3d688B66703497DAA19211EEdff47f25384cdc3': '0x1dD398C2c7fAee61eBB522c434e9f83cf3A9196b',
       '5_USDC_0x3EE77595A8459e93C2888b13aDB354017B198188': '0x6d1f37f5c2c6cf70871a93e439bf921c195c427f'
     }
+  },
+  {
+    id: 'comp_vote',
+    name: 'Comp.Vote',
+    description: 'Voting by signature lets you place votes across Compound Governance proposals, without having to send your transactions on-chain, saving fees.',
+    developer: 'Community-led by arr00 and anish',
+    links: {
+      github: 'https://github.com/Comp-Vote/comp.vote',
+      website: 'https://comp.vote/'
+    },
+    permissions: {
+      sign: '*',
+      popups: true,
+      modals: true
+    },
+    source: {
+      url: "https://comp-vote-xi.vercel.app/?embedded"
+    },
+    supportedMarkets: {
+      '1_USDC_0xc3d688B66703497DAA19211EEdff47f25384cdc3': null
+    }
   }
 ];

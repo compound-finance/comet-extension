@@ -17,7 +17,7 @@ export type Links = {
   website: string;
 };
 
-export type SupportedMarkets = Record<string, string>;
+export type SupportedMarkets = Record<string, string | null>;
 
 export interface Extension {
   id: string;
