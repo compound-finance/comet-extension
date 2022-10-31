@@ -1,8 +1,8 @@
 import test from 'ava';
 import { parseEther } from '@ethersproject/units';
 import { Interface } from '@ethersproject/abi';
-import { InMessage } from '../src/MessageTypes.js';
-import { Permissions, checkPermission } from '../src/Permissions.js';
+import { InMessage } from '../src/MessageTypes';
+import { Permissions, checkPermission } from '../src/Permissions';
 
 interface Test {
   name: string;
