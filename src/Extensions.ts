@@ -26,7 +26,7 @@ export const extensions: Extension[] = [
       ]
     },
     source: {
-      ipfs: 'QmbaUvfUiacao84jyTdyTPoHLCaRg1cuniKcrfaQiWL9pF',
+      ipfs: 'QmViFX6pTjtQQZG5y5ssBQNKUihr6CbHh3BJ6XCn1mTPzA',
       domain: 'comet-v2-migrator.infura-ipfs.io',
       path: '/embedded.html'
     },
