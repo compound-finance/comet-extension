@@ -38,7 +38,7 @@ export const extensions: Extension[] = [
   {
     id: 'comp_vote',
     name: 'Comp.Vote',
-    description: 'Voting by signature lets you place votes across Compound Governance proposals, without having to send your transactions on-chain, saving fees.',
+    description: 'Gas-free governance tool built by the community allowing you to cast you vote and delegate your COMP with just your signature (no gas!).',
     developer: 'Community-led by arr00 and anish',
     links: {
       github: 'https://github.com/Comp-Vote/comp.vote',
