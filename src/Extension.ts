@@ -10,19 +10,29 @@ import { Permissions } from './Permissions.js';
  * ordering for enumeration.
  */
 
-export type ExtensionSource = { url: string } | { ipfs: string; domain?: string; path?: string };
+export type ExtensionSource = {
+  url: string | null;
+} | {
+  ipfs: string;
+  domain?: string;
+  path?: string;
+};
 
 export type Links = {
   github: string;
   website: string;
 };
 
-export type SupportedMarkets = Record<string, string | null>;
+// Special keyword to represent all supported markets.
+export const AllMarkets = 'all';
+
+export type SupportedMarkets = Record<string, string | null> | typeof AllMarkets;
 
 export interface Extension {
   id: string;
   name: string;
   description: string;
+  sub_description?: string;
   developer: string;
   links: Links;
   permissions: Permissions;
