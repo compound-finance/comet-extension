@@ -1,4 +1,3 @@
-
 export enum StateType {
   Loading = 'loading',
   NoWallet = 'no-wallet',
@@ -45,15 +44,17 @@ export type ProtocolState = {
 };
 
 export type TokenWithAccountState = TokenWithState & {
-  allowance: bigint;
   balance: bigint;
+  bulkerAllowance: bigint;
+  cometAllowance: bigint;
   walletBalance: bigint;
 };
 
 export type BaseAssetWithAccountState = BaseAssetWithState & {
-  allowance: bigint;
   balance: bigint;
   borrowCapacity: bigint;
+  bulkerAllowance: bigint;
+  cometAllowance: bigint;
   walletBalance: bigint;
 };
 
@@ -66,9 +67,9 @@ export type TokenWithMarketState = TokenWithState & {
 
 export type ProtocolAndAccountState = Omit<ProtocolState, 'baseAsset' | 'collateralAssets'> & {
   baseAsset: BaseAssetWithAccountState;
-  bulkerAllowance: bigint;
   collateralAssets: TokenWithAccountState[];
   collateralValue: bigint;
+  isBulkerAllowed: boolean;
   liquidationCapacity: bigint;
 };
 
