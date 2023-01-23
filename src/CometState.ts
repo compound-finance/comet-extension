@@ -37,10 +37,8 @@ export type BaseAssetWithState = BaseAsset & {
 export type ProtocolState = {
   baseAsset: BaseAssetWithState;
   borrowAPR: bigint;
-  borrowRewardsAPR: bigint;
   collateralAssets: TokenWithState[];
   earnAPR: bigint;
-  earnRewardsAPR: bigint;
 };
 
 export type TokenWithAccountState = TokenWithState & {
@@ -88,7 +86,6 @@ export type ProtocolAndMarketsState = Omit<ProtocolState, 'collateralAssets'> & 
   factorScale: number;
   marketHistory: MarketHistoricalBucket[];
   reserves: bigint;
-  rewardsAsset?: Token;
   supplyRates: [bigint, number][];
   targetReserves: bigint;
   totalBorrow: bigint;
