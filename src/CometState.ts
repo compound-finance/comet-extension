@@ -44,17 +44,17 @@ export type ProtocolState = {
 };
 
 export type TokenWithAccountState = TokenWithState & {
+  allowance: bigint;
   balance: bigint;
   bulkerAllowance: bigint;
-  cometAllowance: bigint;
   walletBalance: bigint;
 };
 
 export type BaseAssetWithAccountState = BaseAssetWithState & {
+  allowance: bigint;
   balance: bigint;
   borrowCapacity: bigint;
   bulkerAllowance: bigint;
-  cometAllowance: bigint;
   walletBalance: bigint;
 };
 
