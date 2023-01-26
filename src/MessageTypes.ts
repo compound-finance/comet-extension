@@ -1,5 +1,5 @@
 import { TransactionResponse } from '@ethersproject/providers';
-import type { CometState } from './CometState.js';
+import type { CometState, SelectedMarket } from './CometState.js';
 
 /**
  * Extensions - Messages
@@ -16,11 +16,12 @@ import type { CometState } from './CometState.js';
  *       out into a shared lib to make that easy.
  */
 export type InMessage =
-  | { type: 'storage:read'; key: string; }
-  | { type: 'storage:write'; key: string;  value: string }
+  | { type: 'storage:read'; key: string }
+  | { type: 'storage:write'; key: string; value: string }
   | { type: 'sendWeb3'; method: string; params: any[] }
-  | { type: 'getTheme'; }
-  | { type: 'getCometState'; };
+  | { type: 'getTheme' }
+  | { type: 'getCometState' }
+  | { type: 'getSelectedMarket' };
 
 export type OutMessage<InMessage> = InMessage extends { type: 'storage:read' }
   ? { type: 'storage:read'; data: string }
@@ -32,14 +33,17 @@ export type OutMessage<InMessage> = InMessage extends { type: 'storage:read' }
   ? { type: 'setTheme'; theme: 'Dark' | 'Light' }
   : InMessage extends { type: 'getCometState' }
   ? { type: 'setCometState'; cometState: CometState }
+  : InMessage extends { type: 'getSelectedMarket' }
+  ? { type: 'setSelectedMarket'; selectedMarket: SelectedMarket }
   : null;
 
 export type ExtMessage =
-  | { type: 'setTheme', theme: 'Dark' | 'Light' }
-  | { type: 'setCometState', cometState: CometState };
+  | { type: 'setTheme'; theme: 'Dark' | 'Light' }
+  | { type: 'setCometState'; cometState: CometState }
+  | { type: 'setSelectedMarket'; selectedMarket: SelectedMarket };
 
 type ExtMessageConfig<ExtMessage extends { type: string }> = {
-    [E in ExtMessage as E["type"]]?: (msg: E) => void;
+  [E in ExtMessage as E['type']]?: (msg: E) => void;
 };
 
 export type ExtMessageHandler = ExtMessageConfig<ExtMessage>;
