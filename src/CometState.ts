@@ -98,3 +98,10 @@ export type CometStateLoading = [StateType.Loading, undefined | ProtocolState];
 export type CometStateNoWallet = [StateType.NoWallet, ProtocolState];
 export type CometStateHydrated = [StateType.Hydrated, ProtocolAndAccountState];
 export type CometState = CometStateLoading | CometStateNoWallet | CometStateHydrated;
+
+
+export type SelectedMarket = {
+  chainId: number;
+  baseAssetSymbol: string;
+  marketAddress: string;
+};
