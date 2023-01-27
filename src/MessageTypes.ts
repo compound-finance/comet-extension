@@ -37,6 +37,8 @@ export type OutMessage<InMessage> = InMessage extends { type: 'storage:read' }
   ? { type: 'setSelectedMarket'; selectedMarket: SelectedMarket }
   : null;
 
+// When adding a new message, make sure to update
+// the RPC handling in RPC.ts -> handleExtMessage()
 export type ExtMessage =
   | { type: 'setTheme'; theme: 'Dark' | 'Light' }
   | { type: 'setCometState'; cometState: CometState }

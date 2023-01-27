@@ -39,6 +39,8 @@ export function buildRPC(): RPC {
           handler[extMsg.type]!(extMsg);
         } else if (extMsg.type === 'setCometState') {
           handler[extMsg.type]!(extMsg);
+        } else if (extMsg.type === 'setSelectedMarket') {
+          handler[extMsg.type]!(extMsg);
         }
       }
     }
