@@ -39,6 +39,32 @@ let provider = new RPCWeb3Provider(rpc);
 provider.sendTransaction(...);
 ```
 
+### Message Passing
+
+Bidirectional message passing is possible between the iframe and the parent Compound application.
+
+```js
+rpc.sendRPC({ type: 'getSelectedMarket' }).then(({ selectedMarket }) => {
+  console.log('selectedMarket', selectedMarket);
+
+  // selectedMarket {
+  //   "chainId": 1,
+  //   "baseAssetSymbol": "USDC",
+  //   "marketAddress": "0xc3d688B66703497DAA19211EEdff47f25384cdc3"
+  // }
+});
+```
+
+#### Read & Write Message
+
+- `'storage:read'` Reads from the parent window's [local storage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage).
+- `'storage:write'` Writes to the parent window's [local storage].
+- `'sendWeb3'` Sends a JSON RPC request using the parent window's web3 provider.
+- `'getTheme'` Gets the parent window's visual theme (`Dark` or `Light`).
+- `'getSelectedMarket'` Gets the currently selected Comet market in the parent window app.
+- `'setTheme'` Sets the parent window's visual theme (`Dark` or `Light`).
+- `'setSelectedMarket'` Sets the currently selected Comet market in the parent window app.
+
 ### Operators
 
 Operators are smart contracts that have access to act on behalf of a user's Compound III position. For instance, the [Comet Migrator](https://github.com/compound-finance/comet-migrator) is a smart contract which moves a position from Compound II or other DeFi platforms, using a flash loan to move the position atomically. Extensions may often be one-to-one with an operator (defined by a chain and network address), and the Web Extension may just be the user interface to the operator. Read more about Compound III operators in the [Compound III documentation](https://github.com/compound-finance/comet).
