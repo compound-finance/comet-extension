@@ -69,7 +69,7 @@ export const extensions: Extension[] = [
       sign: '*',
     },
     source: {
-      url: "https://wido-extension-template-l1wmp9bl7-widolabs.vercel.app/?embedded"
+      url: "https://wido-extension-template.vercel.app/embedded.html"
     },
     supportedMarkets: {
       '1_USDC_0xc3d688B66703497DAA19211EEdff47f25384cdc3': null,
