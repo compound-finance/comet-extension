@@ -74,7 +74,8 @@ export const extensions: Extension[] = [
     supportedMarkets: {
       '1_USDC_0xc3d688B66703497DAA19211EEdff47f25384cdc3': null,
       '1_WETH_0xA17581A9E3356d9A858b789D68B4d866e593aE94': null,
-      '137_USDC_0xF25212E676D1F7F89Cd72fFEe66158f541246445': null
+      '137_USDC_0xF25212E676D1F7F89Cd72fFEe66158f541246445': null,
+      '42161_USDC_0xA5EDBDD9646f8dFF606d7448e414884C7d905dCA': null
     }
   }
 ];
