@@ -55,5 +55,23 @@ export const extensions: Extension[] = [
     supportedMarkets: {
       '1_USDC_0xc3d688B66703497DAA19211EEdff47f25384cdc3': null
     }
+  },
+  {
+    id: 'yoz_notifications',
+    name: 'Yoz Notifications',
+    description: 'Subscribe to notifications for Compound V3 on Telegram, Email, and Discord via Yoz.',
+    developer: 'Yoz Labs',
+    links: {
+      github: 'https://github.com/yozlabs/comet-extension',
+      website: 'https://yoz.cloud/'
+    },
+    permissions: {},
+    source: {
+	    url: 'https://comet.yzlb.net/',
+    },
+    supportedMarkets: {
+      '1_USDC_0xc3d688B66703497DAA19211EEdff47f25384cdc3': null,
+      '1_ETH_0xA17581A9E3356d9A858b789D68B4d866e593aE94': null,
+    }
   }
 ];
