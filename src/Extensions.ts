@@ -69,7 +69,7 @@ export const extensions: Extension[] = [
       sign: '*',
     },
     source: {
-      url: "https://fleek.ipfs.io/ipfs/QmQjT6NRo4Hvj7ZGdfA5UMLzN9ZSveN2oxQykugKZoFhgV/embedded.html"
+      url: "https://ipfs.fleek.co/ipfs/QmcEEQekV9Vz4oN519uBsPLqjXUs7YathsvGvjNtbC3Y88/embedded.html"
     },
     supportedMarkets: {
       '1_USDC_0xc3d688B66703497DAA19211EEdff47f25384cdc3': null,
