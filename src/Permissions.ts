@@ -240,6 +240,8 @@ export function checkPermission(message: InMessage, permissions: Permissions, op
       } else {
         return 'Write access denied';
       }
+    case 'getSelectedMarket':
+      return null;
     case 'sendWeb3':
       let { method, params } = message;
       switch (method.toLowerCase().trim()) {
