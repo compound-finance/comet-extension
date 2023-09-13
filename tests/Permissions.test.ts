@@ -134,6 +134,13 @@ let tests: Test[] = [
     message: { type: 'storage:write', key: 'dog', value: 'keen' },
     exp: null
   },
+  /** getSelectedMarket **/
+  {
+    name: 'getSelectedMarket - allowed',
+    permissions: {},
+    message: { type: 'getSelectedMarket' },
+    exp: null
+  },
   /** TRX **/
   {
     name: 'trx - chainId - empty',
