@@ -67,6 +67,13 @@ export const extensions: Extension[] = [
     },
     permissions: {
       sign: '*',
+      trx: [
+        {
+          contract: '$operator',
+          abi: 'swapCollateral((address,uint256),(address,uint256),((uint8,bytes32,bytes32),(uint8,bytes32,bytes32)),(address,address,bytes),address)',
+          params: '*'
+        }
+      ]
     },
     source: {
       url: "https://ipfs.fleek.co/ipfs/QmcEEQekV9Vz4oN519uBsPLqjXUs7YathsvGvjNtbC3Y88/embedded.html"
