@@ -93,6 +93,9 @@ function isTypeParams(params: any[]): params is [ string, TypeParams ] {
 }
 
 function checkSendTransaction(params: any[], { trx }: Permissions, operator: string | null): null | string {
+  console.log('params', params);
+  console.log('trx', trx);
+  console.log('operator', operator);
   if (trx === '*') {
     return null;
   } else {
@@ -105,6 +108,8 @@ function checkSendTransaction(params: any[], { trx }: Permissions, operator: str
         let contract = trxPerm.contract;
         if (contract === '$operator') {
           if (!operator) {
+            console.log('Operator is null');
+            console.log('operator', operator);
             return false;
           }
 
@@ -112,6 +117,9 @@ function checkSendTransaction(params: any[], { trx }: Permissions, operator: str
         }
 
         if (!strEq(contract, callParams.to)) {
+          console.log('Contract is not equal to callParams.to');
+          console.log('contract', contract);
+          console.log('callParams.to', callParams.to);
           return false;
         }
       }
@@ -129,12 +137,18 @@ function checkSendTransaction(params: any[], { trx }: Permissions, operator: str
         }
         let func = Object.values(iface.functions)[0];
         if (!strEq(callParams.data.slice(0, 10), iface.getSighash(func.name))) {
+          console.log(`Mismatch. Expected: ${iface.getSighash(func.name)}, Received: ${callParams.data.slice(0, 10)}`);
+          console.log('callParams.data', callParams.data);
+          console.log('func.name', func.name);
+          console.log('abi', abi.toString());
           return false;
         }
         let funcParamsEnc = callParams.data.slice(10);
         if (trxPerm.params === undefined || trxPerm.params === '*') {
           return true;
         } else {
+          console.log('trxPerm.params is not equal to undefined or "*"');
+          console.log('trxPerm.params', trxPerm.params);
           let decodedParams = iface.decodeFunctionData(func, callParams.data);
           let matchesParams = trxPerm.params.every((param, index) => {
             let decodedParam = decodedParams[index];
