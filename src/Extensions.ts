@@ -55,5 +55,34 @@ export const extensions: Extension[] = [
     supportedMarkets: {
       '1_USDC_0xc3d688B66703497DAA19211EEdff47f25384cdc3': null
     }
+  },
+  {
+    id: 'collateral_swap',
+    name: 'Collateral Swap',
+    description: 'Enables swapping collateral on open loan positions without the need to repay the loan, in a single transaction',
+    developer: 'Wido Labs',
+    links: {
+      github: 'https://github.com/widolabs/compound-collateral-extension-ui',
+      website: 'https://www.joinwido.com/'
+    },
+    permissions: {
+      sign: '*',
+      trx: [
+        {
+          contract: '$operator',
+          abi: 'swapCollateral((address,uint256),(address,uint256),((uint8,bytes32,bytes32),(uint8,bytes32,bytes32)),(address,address,bytes),address)',
+          params: '*'
+        }
+      ]
+    },
+    source: {
+      url: "https://ipfs.fleek.co/ipfs/QmcEEQekV9Vz4oN519uBsPLqjXUs7YathsvGvjNtbC3Y88/embedded.html"
+    },
+    supportedMarkets: {
+      '1_USDC_0xc3d688B66703497DAA19211EEdff47f25384cdc3': '0xaAA9f2FeE419977804eBD06F6E121f76FbcE8498',
+      '1_ETH_0xA17581A9E3356d9A858b789D68B4d866e593aE94': '0xaAA9f2FeE419977804eBD06F6E121f76FbcE8498',
+      '137_USDC_0xF25212E676D1F7F89Cd72fFEe66158f541246445': '0x17000CdCCCFf2D0B2d8958BA40c751Fa9b4BE089',
+      '42161_USDC.e_0xA5EDBDD9646f8dFF606d7448e414884C7d905dCA': '0x74436167012475749168f33324e84990C8013647'
+    }
   }
 ];
