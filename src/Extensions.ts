@@ -55,5 +55,22 @@ export const extensions: Extension[] = [
     supportedMarkets: {
       '1_USDC_0xc3d688B66703497DAA19211EEdff47f25384cdc3': null
     }
+  },
+  {
+    id: 'compound_V2_info',
+    name: 'Compound V2 Info',
+    description: 'Data and analytics for Compound V2',
+    developer: 'Paperclip Labs',
+    links: {
+      github: 'https://github.com/papercliplabs/compound-info',
+      website: 'https://paperclip.xyz'
+    },
+    permissions: {},
+    source: {
+      ipfs: 'QmdoThSUCuHDGinSvhNuvnihvWWdriwsNzCnYUjGrei1o5',
+      domain: 'compound-info-v2.infura-ipfs.io',
+      path: '?embedded'
+    },
+    supportedMarkets: {}
   }
 ];
